@@ -50,5 +50,13 @@ namespace LearningJenkins.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void About_Page_Message_Should_Say_Your_application_description_page()
+        {
+            HomeController controller = new HomeController();
+            ViewResult result = controller.About() as ViewResult;
+            Assert.AreEqual("Your application description page.", result.ViewData["Message"]);
+        }
     }
 }
